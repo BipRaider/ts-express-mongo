@@ -1,0 +1,479 @@
+{
+  "info": {
+    "name": "my-cv",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": ""
+  },
+  "item": [
+    {
+      "name": "Register user",
+      "request": {
+        "method": "POST",
+        "url": {
+          "raw": "http://localhost:8001/users/register",
+          "protocol": "http",
+          "host": ["localhost:8001"],
+          "path": ["users", "register"],
+          "port": "8001"
+        },
+        "header": [
+          { "key": "Origin", "value": "https://www.bipgo.pw" },
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "options": { "raw": { "language": "json" } },
+          "raw": "{\n  \"password\":\"123456789\",\n  \"email\":\"the1@1.com\",\n  \"name\":\"ADMIN\",\n  \"message\":\"This test message\"\n}"
+        }
+      }
+    },
+    {
+      "name": "Login user",
+      "request": {
+        "method": "POST",
+        "url": {
+          "raw": "http://localhost:8001/users/login",
+          "protocol": "https",
+          "host": ["localhost:8001"],
+          "path": ["users", "login"]
+        },
+        "header": [
+          { "key": "Content-Type", "value": "application/json" },
+          { "key": "Origin", "value": "https://www.bipgo.pw" }
+        ],
+        "body": {
+          "mode": "raw",
+          "options": { "raw": { "language": "json" } },
+          "raw": "{\n  \"password\":\"123456789\",\n  \"email\":\"the1@1.com\"\n}"
+        }
+      }
+    },
+    {
+      "name": "Create skill",
+      "request": {
+        "method": "POST",
+        "url": {
+          "raw": "http://localhost:8001/skill/create",
+          "protocol": "http",
+          "host": ["localhost:8001"],
+          "path": ["skill", "create"],
+          "port": "8001"
+        },
+        "header": [
+          { "key": "Origin", "value": "https://www.bipgo.pw" },
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "options": { "raw": { "language": "json" } },
+          "raw": "{\n  \"experience\":\"12.12.1212\",\n  \"skill\": 66,\n  \"link\":\"http://localhost:8001\",\n  \"description\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaa\",\n  \"name\":\"Noda9293213\",\n  \"libraries\":[\"63833174f5bcfaf6449b1005\",\"6383816a08d2919497de019b\",\"6383818608d2919497de01a0\",\"6383819908d2919497de01a5\"],\n  \"type\": \"service\",\n  \"dev\": \"all\"\n}"
+        },
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRoZTFAMS5jb20iLCJyb2xlcyI6WyJVU0VSIiwiQURNSU4iXSwibmFtZSI6IkFETUlOIiwiaWF0IjoxNjY5NTYyNTkzLCJleHAiOjE2Njk2NDg5OTN9.Y6fVvXCAtPSrSJRE9Zds_rWLnX4ruzHBZyO27GfUaqo",
+              "type": "string"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Get skills",
+      "request": {
+        "method": "POST",
+        "url": {
+          "raw": "http://localhost:8001/skill",
+          "protocol": "http",
+          "host": ["localhost:8001"],
+          "path": ["skill"],
+          "port": "8001"
+        },
+        "header": [
+          { "key": "Origin", "value": "https://www.bipgo.pw" },
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "options": { "raw": { "language": "json" } },
+          "raw": "{\n  \"skip\": 0,\n  \"limit\": 0\n}"
+        }
+      }
+    },
+    {
+      "name": "Update skill",
+      "request": {
+        "method": "PATCH",
+        "url": {
+          "raw": "http://localhost:8001/skill/update",
+          "protocol": "http",
+          "host": ["localhost:8001"],
+          "path": ["skill", "update"],
+          "port": "8001"
+        },
+        "header": [
+          { "key": "Origin", "value": "https://www.bipgo.pw" },
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "options": { "raw": { "language": "json" } },
+          "raw": "{\n  \"id\":\"63825baa35c81c5f3895dd0d\",\n  \"skill\":8,\n  \"addLib\":[\"63833174f5bcfaf6449b1005\",\"6383816a08d2919497de019b\",\"6383818608d2919497de01a0\",\"6383819908d2919497de01a5\"],\n  \"removeLib\":[]\n}"
+        },
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRoZTFAMS5jb20iLCJyb2xlcyI6WyJVU0VSIiwiQURNSU4iXSwibmFtZSI6IkFETUlOIiwiaWF0IjoxNjY5NTYyNTkzLCJleHAiOjE2Njk2NDg5OTN9.Y6fVvXCAtPSrSJRE9Zds_rWLnX4ruzHBZyO27GfUaqo",
+              "type": "string"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Get skill by id",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:8001/skill/6363ff365b2d5d23e73edbe2",
+          "protocol": "http",
+          "host": ["localhost:8001"],
+          "path": ["skill", "6363ff365b2d5d23e73edbe2"],
+          "port": "8001"
+        },
+        "header": [
+          { "key": "Origin", "value": "https://www.bipgo.pw" },
+          { "key": "Content-Type", "value": "application/json" }
+        ]
+      }
+    },
+    {
+      "name": "Delete skill",
+      "request": {
+        "method": "DELETE",
+        "url": {
+          "raw": "http://localhost:8001/skill/6378be74ea9e5343843859b8",
+          "protocol": "http",
+          "host": ["localhost:8001"],
+          "path": ["skill", "6378be74ea9e5343843859b8"],
+          "port": "8001"
+        },
+        "header": [
+          { "key": "Origin", "value": "https://www.bipgo.pw" },
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRoZTFAMS5jb20iLCJyb2xlcyI6WyJVU0VSIiwiQURNSU4iXSwibmFtZSI6IkFETUlOIiwiaWF0IjoxNjY4ODU3NDI1LCJleHAiOjE2Njg5NDM4MjV9.iL2PKvAgEubpj8XB5tfsZmJQfRBW-luURmWV7k4nsfI",
+              "type": "string"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Create library",
+      "request": {
+        "method": "POST",
+        "url": {
+          "raw": "http://localhost:8001/library/create",
+          "protocol": "http",
+          "host": ["localhost:8001"],
+          "path": ["library", "create"],
+          "port": "8001"
+        },
+        "header": [
+          { "key": "Origin", "value": "https://www.bipgo.pw" },
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "options": { "raw": { "language": "json" } },
+          "raw": "{\n  \"link\":\"ssssssssssssss\",\n  \"description\":\"sssssssssssssdsad asd asd sd ad ad\",\n  \"name\":\"new 333 333\",\n  \"npm\": \"npm i -g sss\",\n  \"dev\": 1\n}"
+        },
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRoZTFAMS5jb20iLCJyb2xlcyI6WyJVU0VSIiwiQURNSU4iXSwibmFtZSI6IkFETUlOIiwiaWF0IjoxNjY5NTYyNTkzLCJleHAiOjE2Njk2NDg5OTN9.Y6fVvXCAtPSrSJRE9Zds_rWLnX4ruzHBZyO27GfUaqo",
+              "type": "string"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Update library",
+      "request": {
+        "method": "PATCH",
+        "url": {
+          "raw": "http://localhost:8001/library/update",
+          "protocol": "http",
+          "host": ["localhost:8001"],
+          "path": ["library", "update"],
+          "port": "8001"
+        },
+        "header": [
+          { "key": "Origin", "value": "https://www.bipgo.pw" },
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "options": { "raw": { "language": "json" } },
+          "raw": "{\n  \"id\":\"6378beefea9e5343843859c7\",\n  \"link\":\"http://localhost:8001\",\n  \"description\":\"aaaaaaaaa2aaaaaaaa\",\n  \"npm\": \"service\",\n  \"dev\": 1\n}"
+        },
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRoZTFAMS5jb20iLCJyb2xlcyI6WyJVU0VSIiwiQURNSU4iXSwibmFtZSI6IkFETUlOIiwiaWF0IjoxNjY4ODU3NDI1LCJleHAiOjE2Njg5NDM4MjV9.iL2PKvAgEubpj8XB5tfsZmJQfRBW-luURmWV7k4nsfI",
+              "type": "string"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Get all Libraries",
+      "request": {
+        "method": "POST",
+        "url": {
+          "raw": "http://localhost:8001/library",
+          "protocol": "http",
+          "host": ["localhost:8001"],
+          "path": ["library"],
+          "port": "8001"
+        },
+        "header": [
+          { "key": "Origin", "value": "https://www.bipgo.pw" },
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "options": { "raw": { "language": "json" } },
+          "raw": "{\n  \"skip\": 0,\n  \"limit\": 0\n}"
+        }
+      }
+    },
+    {
+      "name": "Find library by ID",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:8001/library/636669aea50606b8f5765d15",
+          "protocol": "http",
+          "host": ["localhost:8001"],
+          "path": ["library", "636669aea50606b8f5765d15"],
+          "port": "8001"
+        },
+        "header": [
+          { "key": "Origin", "value": "https://www.bipgo.pw" },
+          { "key": "Content-Type", "value": "application/json" }
+        ]
+      }
+    },
+    {
+      "name": "Delete library",
+      "request": {
+        "method": "DELETE",
+        "url": {
+          "raw": "http://localhost:8001/library/6378beefea9e5343843859c7",
+          "protocol": "http",
+          "host": ["localhost:8001"],
+          "path": ["library", "6378beefea9e5343843859c7"],
+          "port": "8001"
+        },
+        "header": [
+          { "key": "Origin", "value": "https://www.bipgo.pw" },
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRoZTFAMS5jb20iLCJyb2xlcyI6WyJVU0VSIiwiQURNSU4iXSwibmFtZSI6IkFETUlOIiwiaWF0IjoxNjY4ODU3NDI1LCJleHAiOjE2Njg5NDM4MjV9.iL2PKvAgEubpj8XB5tfsZmJQfRBW-luURmWV7k4nsfI",
+              "type": "string"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Create About author",
+      "request": {
+        "method": "POST",
+        "url": {
+          "raw": "http://localhost:8001/about/create",
+          "protocol": "http",
+          "host": ["localhost:8001"],
+          "path": ["about", "create"],
+          "port": "8001"
+        },
+        "header": [
+          { "key": "Origin", "value": "https://www.bipgo.pw" },
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "options": { "raw": { "language": "json" } },
+          "raw": "{\n  \"duration\":\"12.12.22\",\n  \"name\":\"My Name 23\",\n  \"description\":\"lalalqealalala\",\n  \"status\":\"working\",\n  \"position\":\"Backend\",\n  \"privateData\":{\n    \"firstname\":\"bip\",\n    \"lastname\":\"raider\",\n    \"photo\":\"photo\",\n    \"phone\":\"phone\",\n    \"email\":\"email@gmail.com\",\n    \"address\":\"adress\"\n  }\n}"
+        },
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRoZTFAMS5jb20iLCJyb2xlcyI6WyJVU0VSIiwiQURNSU4iXSwibmFtZSI6IkFETUlOIiwiaWF0IjoxNjY5MTIzNDg2LCJleHAiOjE2NjkyMDk4ODZ9.PrbprBMewXibB8mHa1FdnHbxH2XA9e1l5A24l8ws6cE",
+              "type": "string"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Find Author by id",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:8001/about/6378bfabea9e5343843859e6",
+          "protocol": "http",
+          "host": ["localhost:8001"],
+          "path": ["about", "6378bfabea9e5343843859e6"],
+          "port": "8001"
+        },
+        "header": [
+          { "key": "Origin", "value": "https://www.bipgo.pw" },
+          { "key": "Content-Type", "value": "application/json" }
+        ]
+      }
+    },
+    {
+      "name": "Delete Author by id",
+      "request": {
+        "method": "DELETE",
+        "url": {
+          "raw": "http://localhost:8001/about/6378bfabea9e5343843859e6",
+          "protocol": "http",
+          "host": ["localhost:8001"],
+          "path": ["about", "6378bfabea9e5343843859e6"],
+          "port": "8001"
+        },
+        "header": [
+          { "key": "Origin", "value": "https://www.bipgo.pw" },
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRoZTFAMS5jb20iLCJyb2xlcyI6WyJVU0VSIiwiQURNSU4iXSwibmFtZSI6IkFETUlOIiwiaWF0IjoxNjY4ODU3NDI1LCJleHAiOjE2Njg5NDM4MjV9.iL2PKvAgEubpj8XB5tfsZmJQfRBW-luURmWV7k4nsfI",
+              "type": "string"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Update Author by id",
+      "request": {
+        "method": "PATCH",
+        "url": {
+          "raw": "http://localhost:8001/about/update",
+          "protocol": "http",
+          "host": ["localhost:8001"],
+          "path": ["about", "update"],
+          "port": "8001"
+        },
+        "header": [
+          { "key": "Origin", "value": "https://www.bipgo.pw" },
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "options": { "raw": { "language": "json" } },
+          "raw": "{\n\"removeLanguages\":[\"6377c40dda03b1886d8610f9\",\n      \"6377bfc17d498b92615081f2\",\n      \"6377c2b157310b356bae40c5\"],\n      \"name\":\"ttt natttme\",\n\"id\":\"636fd3b3ccf333f491794967\"\n}"
+        },
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRoZTFAMS5jb20iLCJyb2xlcyI6WyJVU0VSIiwiQURNSU4iXSwibmFtZSI6IkFETUlOIiwiaWF0IjoxNjY5MTIzNDg2LCJleHAiOjE2NjkyMDk4ODZ9.PrbprBMewXibB8mHa1FdnHbxH2XA9e1l5A24l8ws6cE",
+              "type": "string"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Create Language",
+      "request": {
+        "method": "POST",
+        "url": {
+          "raw": "http://localhost:8001/language/create",
+          "protocol": "http",
+          "host": ["localhost:8001"],
+          "path": ["language", "create"],
+          "port": "8001"
+        },
+        "header": [
+          { "key": "Origin", "value": "https://www.bipgo.pw" },
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "options": { "raw": { "language": "json" } },
+          "raw": "{\n  \"name\":\"fisrt2232\",\n  \"level\":\"elementary\",\n  \"userId\":\"6377b287caae55d58a5587d6\"\n}"
+        },
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRoZTFAMS5jb20iLCJyb2xlcyI6WyJVU0VSIiwiQURNSU4iXSwibmFtZSI6IkFETUlOIiwiaWF0IjoxNjY5MzAyMzM5LCJleHAiOjE2NjkzODg3Mzl9.Q93Y-i2HxhmOziVTKO_npAMamhbRWBhhf8al612VvZg",
+              "type": "string"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Remove Language",
+      "request": {
+        "method": "DELETE",
+        "url": {
+          "raw": "http://localhost:8001/language/6377b359caae55d54a5867da",
+          "protocol": "http",
+          "host": ["localhost:8001"],
+          "path": ["language", "6377b359caae55d54a5867da"],
+          "port": "8001"
+        },
+        "header": [
+          { "key": "Origin", "value": "https://www.bipgo.pw" },
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRoZTFAMS5jb20iLCJyb2xlcyI6WyJVU0VSIiwiQURNSU4iXSwibmFtZSI6IkFETUlOIiwiaWF0IjoxNjY4Nzg4ODA2LCJleHAiOjE2Njg4NzUyMDZ9.6r_hOzcXzOVi1VQKzrmz57VHH2b801vVP12HzOI2eKc",
+              "type": "string"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

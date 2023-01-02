@@ -1,0 +1,9 @@
+# Ignore artifacts:
+dist
+node_modules
+package-lock.json
+test
+*.json
+/idea
+**/*.test.ts
+**/*.spec.ts

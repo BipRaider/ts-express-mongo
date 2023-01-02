@@ -1,0 +1,10 @@
+import './app.e2e.spec';
+import './users.e2e.spec';
+import './skill.e2e.spec';
+import './libraries.e2e.spec';
+import './project.e2e.spec';
+import './language.e2e.spec';
+import './social.e2e.spec';
+import './place-work.e2e.spec';
+import './author.e2e.spec';
+import './author_list.e2e.spec';

@@ -1,0 +1,41 @@
+version: "3.8"
+
+services:
+  backend:
+    container_name: backend
+    restart: always
+    build:
+      context: .
+      dockerfile: ./Dockerfile.dev
+    volumes:
+      - /usr/src/app/node_modules
+      - .:/usr/src/app
+    env_file:
+      - docker-compose.env
+    command: npm run dev
+    ports:
+      - 8080:8080
+    networks:
+      - ts-express-mongo
+    depends_on:
+      - mongo
+
+  mongo:
+    image: mongo
+    container_name: mongo
+    restart: always
+    volumes:
+      - tsexpressmongodata:/data/db
+    ports:
+      - '27017:27017'
+    networks:
+      - ts-express-mongo
+
+networks:
+  ts-express-mongo:
+    driver: bridge
+
+volumes:
+  tsexpressmongodata:
+
+
